@@ -1,0 +1,33 @@
+<meta charset = "utf-8">
+<script>
+
+alert("Давайте поиграем в загадки!");
+var i = 0;
+var answer = '';
+
+answer = prompt("Без окон без дверей полна горница людей");
+if(answer == 'огурец'){
+	alert('Верно!');
+	i++;
+} else {
+	alert('Нет...(');
+}
+
+answer = prompt("Висит груша, нельзя скушать");
+if(answer == 'лампочка'){
+	alert('Верно!');
+	i++;
+} else {
+	alert('Нет...(');
+}
+
+answer = prompt("Зимой и летом одним цветом");
+if(answer == 'елка'){
+	alert('Верно!');
+	i++;
+} else {
+	alert('Нет...(');
+}
+
+alert('Конец игры! Верных ответов: ' + i);
+</script>
