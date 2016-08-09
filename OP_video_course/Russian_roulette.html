@@ -1,0 +1,17 @@
+<meta charset = "utf-8">
+<script>
+
+alert('Проверь свою удачу! Жми окей.');
+var n = 0;
+while (prompt('1 - стреляем в голову, другое - идем домой') == 1) {
+	if (Math.random()*6 < 2) {
+		alert('Мертв!');
+		break;
+	} else {
+		alert('Удача на твоей стороне!');
+	}
+	n++;
+}
+
+alert('Раундов сыграно: ' + n);
+</script>
