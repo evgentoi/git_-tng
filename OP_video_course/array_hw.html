@@ -2,28 +2,24 @@
 <script>
 
 var arr = [];
-var rounds = 15;
-
-for (var i = 0; i <= rounds; i++) {
-	arr.push(Math.floor(Math.random() * 3) - 1); //-1 -- красное, 1 - черное, 0
-}
-alert(arr);
-
+var rounds = 1000000;
 var maxRed = 0;
 var red = 0;
 
 for (var i = 0; i <= rounds; i++) {
+	arr.push(Math.floor(Math.random() * 3) - 1); /*-1 -- красное, 1 - черное, 0
+													http://javascript.ru/math.random*/	
 	if(arr[i] == -1){
 		red++;
+	} else {
+		red = 0;
 	}
 
 	if (red > maxRed) {
 		maxRed = red;
-		red = 0;
 	}
 }
-alert(maxRed)
+alert(arr);
+alert(maxRed + ' -- максимальное число раундов, где выпадало красное.');
  
-
-
 </script>
