@@ -7,8 +7,21 @@
 // 	n++;
 // } while (n <= 10)
 
-for (var n = 0; n <= 10; n++) {
-	alert(n);
+// for (var n = 0; n <= 10; n++) {
+// 	alert(n);
+// }
+
+// for (var n = 0; n <= 100; n = n + 2) {
+// 	alert(n);
+// }
+
+var deposit = parseInt(prompt('Введите сумму вклада: '));
+var rate = parseInt(prompt('Введите % ставку: '));
+var years = parseInt(prompt('На сколько лет: '));
+
+for (var i = 1; i <= years; i++) {
+	deposit = deposit + (deposit / 100) * rate;
+	alert('Через лет: ' + i + ' ваш доход составит: ' + deposit);
 }
 
 </script>
