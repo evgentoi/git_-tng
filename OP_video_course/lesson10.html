@@ -21,7 +21,8 @@ var years = parseInt(prompt('На сколько лет: '));
 
 for (var i = 1; i <= years; i++) {
 	deposit = deposit + (deposit / 100) * rate;
-	alert('Через лет: ' + i + ' ваш доход составит: ' + deposit);
+	alert('Через лет: ' + i + ' ваш доход составит: ' + Math.floor(deposit));
+	//Math.floor() -- обрезает после запятой.
 }
 
 </script>
