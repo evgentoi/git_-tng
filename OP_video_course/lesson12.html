@@ -1,0 +1,60 @@
+<!-- Значения очков каждой карты: 
+от двойки до десятки — соответственно от 2 до 10, 
+у туза — 1 или 11 (11 пока общая сумма не больше 21, далее 1), 
+у т. н. картинок (король, дама, валет) — 10. -->
+
+<meta charset="utf-8">
+<script>
+	
+	/*random function*/
+	function getRandomInt(min, max) {
+		return Math.floor(Math.random() * (max - min + 1)) + min;
+	}
+
+	/*функция выдает карты*/
+	function getCard() {
+		var cards = ['6', '7', '8', '9', '10', 'J', 'Q', 'K', 'A'];
+		return cards[getRandomInt(0, cards.length - 1)];
+	}
+
+	/*функция суммирует карты игроков*/
+	function gerSum(hand) {
+		var sum = 0;
+
+		/*все карты кроме тузов*/
+		for (var i = 0; i < hand.length; i++) {
+			var card = hand[i];
+			if (card != 'A') {
+				if (card == 'J' || card == 'Q' || card == 'K') {
+					sum += 10;
+				} else {
+					sum += parseInt(card);
+				}
+			}
+		
+		}
+
+		/*тузы*/
+		for (var i = 0; i < hand.length; i++) {
+			var card = hand[i];
+			if (card == 'A') {
+				if (sum > 10) {
+					sum++;
+				} else {
+					sum += 11;
+				}
+			}
+		}
+		
+
+		return sum;
+	}	
+
+	var dealer = [getCard()];
+	var player = [getCard(), getCard()];
+
+	alert('Дилер: ' + dealer.join(' ') + '\nИгрок: ' + player.join(' '));
+
+	/*.join() -- функция массива:
+	берет элементы, преобразовывает в строки и склеивает в одну длинную с указаным разделителем.*/
+</script>
